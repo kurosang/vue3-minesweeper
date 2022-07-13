@@ -100,6 +100,8 @@ export class GamePlay {
   }
 
   onClick(e: MouseEvent, block: BlockState) {
+    if (this.state.value.gameState !== 'play')
+      return
     if (!this.state.value.mineGenerated) {
       this.generateMines(block)
       this.state.value.mineGenerated = true
